@@ -15,12 +15,12 @@ Widget WeatherForcast() {
   return Scaffold(
     appBar: AppBar(
       elevation: 0,
-      title: Text(
+      title: const Text(
         "Weather Forcast",
         style: TextStyle(color: Colors.white),
       ),
       centerTitle: true,
-      backgroundColor: Color.fromARGB(255, 240, 56, 43),
+      backgroundColor: const Color.fromARGB(255, 240, 56, 43),
     ),
     body: _bodyWeatherApp(),
   );
@@ -28,12 +28,21 @@ Widget WeatherForcast() {
 
 Widget _bodyWeatherApp() {
   return Container(
-    color: Color.fromARGB(255, 240, 56, 43),
-    padding: EdgeInsets.all(10),
+    color: const Color.fromARGB(255, 240, 56, 43),
+    padding: const EdgeInsets.all(10),
     child: Column(children: [
       _searchCity(),
       _localName(),
       _weatherDescription(),
+      SizedBox(
+        height: 50,
+      ),
+      _addInformation(),
+      SizedBox(
+        height: 40,
+      ),
+      _titleForListView(),
+      _listViewForCast(),
     ]),
   );
 }
@@ -41,16 +50,16 @@ Widget _bodyWeatherApp() {
 Widget _searchCity() {
   return Row(
     children: [
-      Icon(
+      const Icon(
         Icons.search,
         color: Colors.white,
       ),
-      SizedBox(
+      const SizedBox(
         width: 12,
       ),
-      Text(
+      const Text(
         "Enter City Name",
-        style: TextStyle(color: Colors.white),
+        style: const TextStyle(color: Colors.white),
       ),
     ],
   );
@@ -58,19 +67,19 @@ Widget _searchCity() {
 
 Widget _localName() {
   return Container(
-    margin: EdgeInsets.only(top: 30),
+    margin: const EdgeInsets.only(top: 30),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text("Murmansk Oblast, RU",
-            style: TextStyle(
+        const Text("Murmansk Oblast, RU",
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 35,
             )),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
-        Text("Friday, Mar 20, 2020",
+        const Text("Friday, Mar 20, 2020",
             style: TextStyle(
               color: Colors.white,
               fontSize: 15,
@@ -82,28 +91,28 @@ Widget _localName() {
 
 Widget _weatherDescription() {
   return Container(
-    padding: EdgeInsets.only(top: 50),
+    padding: const EdgeInsets.only(top: 50),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Column(
           children: [
-            Icon(
+            const Icon(
               Icons.wb_sunny,
               color: Colors.white,
               size: 70,
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           width: 20,
         ),
         Column(
           children: [
             Row(
               children: [
-                Text("14 F",
-                    style: TextStyle(
+                const Text("14 °F",
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 55,
                     )),
@@ -111,8 +120,8 @@ Widget _weatherDescription() {
             ),
             Row(
               children: [
-                Text("LIGHT SHOW",
-                    style: TextStyle(
+                const Text("LIGHT SHOW",
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 15,
                     )),
@@ -122,5 +131,105 @@ Widget _weatherDescription() {
         ),
       ],
     ),
+  );
+}
+
+Widget _addInformation() {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: [
+      Column(
+        children: [
+          const Icon(
+            Icons.ac_unit,
+            color: Colors.white,
+            size: 30,
+          ),
+          const SizedBox(
+            height: 5,
+          ),
+          const Text(
+            "5",
+            style: TextStyle(color: Colors.white, fontSize: 17),
+          ),
+          const Text(
+            "km/hr",
+            style: TextStyle(color: Colors.white),
+          ),
+        ],
+      ),
+      Column(
+        children: [
+          const Icon(
+            Icons.ac_unit,
+            color: Colors.white,
+            size: 30,
+          ),
+          const SizedBox(
+            height: 5,
+          ),
+          const Text(
+            "3",
+            style: const TextStyle(color: Colors.white, fontSize: 17),
+          ),
+          const Text(
+            "%",
+            style: const TextStyle(color: Colors.white),
+          ),
+        ],
+      ),
+      Column(
+        children: [
+          const Icon(
+            Icons.ac_unit,
+            color: Colors.white,
+            size: 30,
+          ),
+          const SizedBox(
+            height: 5,
+          ),
+          const Text(
+            "20",
+            style: const TextStyle(color: Colors.white, fontSize: 17),
+          ),
+          const Text(
+            "%",
+            style: const TextStyle(color: Colors.white),
+          ),
+        ],
+      ),
+    ],
+  );
+}
+
+Widget _titleForListView() {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      Text(
+        "7-DAY WEATHER FORCAST",
+        style: TextStyle(color: Colors.white, fontSize: 16),
+      ),
+    ],
+  );
+}
+
+Widget _listViewForCast() {
+  return ListView(
+    itemExtent: 300,
+    children: [
+      ListTile(
+        title: Text('Friday'),
+        subtitle: Text("More adf"),
+      ),
+      ListTile(
+        title: Text('Friday'),
+        subtitle: Text("More adf"),
+      ),
+      ListTile(
+        title: Text('Friday'),
+        subtitle: Text("More adf"),
+      ),
+    ],
   );
 }
