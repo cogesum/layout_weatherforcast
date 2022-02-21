@@ -42,6 +42,9 @@ Widget _bodyWeatherApp() {
         height: 40,
       ),
       _titleForListView(),
+      SizedBox(
+        height: 15,
+      ),
       _listViewForCast(),
     ]),
   );
@@ -215,21 +218,220 @@ Widget _titleForListView() {
 }
 
 Widget _listViewForCast() {
-  return ListView(
-    itemExtent: 300,
-    children: [
-      ListTile(
-        title: Text('Friday'),
-        subtitle: Text("More adf"),
-      ),
-      ListTile(
-        title: Text('Friday'),
-        subtitle: Text("More adf"),
-      ),
-      ListTile(
-        title: Text('Friday'),
-        subtitle: Text("More adf"),
-      ),
-    ],
+  final List weekDays = [
+    "Friday",
+    "Satuday",
+    "Sanday",
+    "Monday",
+    "Tuesday",
+    "Wendsday",
+    "Thursday"
+  ];
+
+  return SizedBox(
+    height: 100,
+    child: ListView(
+      itemExtent: 140,
+      scrollDirection: Axis.horizontal,
+      shrinkWrap: true,
+      children: [
+        Card(
+          color: Color.fromARGB(115, 226, 151, 151),
+          child: ListTile(
+            title: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  weekDays[0],
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Text(
+                    "5 °F",
+                    style: TextStyle(color: Colors.white, fontSize: 25),
+                  ),
+                  SizedBox(
+                    width: 7,
+                  ),
+                  Icon(
+                    Icons.wb_sunny,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                ]),
+              ],
+            ),
+          ),
+        ),
+        Card(
+          color: Color.fromARGB(115, 226, 151, 151),
+          child: ListTile(
+            title: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  weekDays[1],
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Text(
+                    "22 °F",
+                    style: TextStyle(color: Colors.white, fontSize: 25),
+                  ),
+                  SizedBox(
+                    width: 7,
+                  ),
+                  Icon(
+                    Icons.wb_sunny,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                ]),
+              ],
+            ),
+          ),
+        ),
+        Card(
+          color: Color.fromARGB(115, 226, 151, 151),
+          child: ListTile(
+            title: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  weekDays[2],
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Text(
+                    "17 °F",
+                    style: TextStyle(color: Colors.white, fontSize: 25),
+                  ),
+                  SizedBox(
+                    width: 7,
+                  ),
+                  Icon(
+                    Icons.wb_sunny,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                ]),
+              ],
+            ),
+          ),
+        ),
+        Card(
+          color: Color.fromARGB(115, 226, 151, 151),
+          child: ListTile(
+            title: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  weekDays[3],
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Text(
+                    "11 °F",
+                    style: TextStyle(color: Colors.white, fontSize: 25),
+                  ),
+                  SizedBox(
+                    width: 7,
+                  ),
+                  Icon(
+                    Icons.wb_sunny,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                ]),
+              ],
+            ),
+          ),
+        ),
+        Card(
+          color: Color.fromARGB(115, 226, 151, 151),
+          child: ListTile(
+            title: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  weekDays[4],
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Text(
+                    "14 °F",
+                    style: TextStyle(color: Colors.white, fontSize: 25),
+                  ),
+                  SizedBox(
+                    width: 7,
+                  ),
+                  Icon(
+                    Icons.wb_sunny,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                ]),
+              ],
+            ),
+          ),
+        ),
+        Card(
+          color: Color.fromARGB(115, 226, 151, 151),
+          child: ListTile(
+            title: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  weekDays[5],
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Text(
+                    "17 °F",
+                    style: TextStyle(color: Colors.white, fontSize: 25),
+                  ),
+                  SizedBox(
+                    width: 7,
+                  ),
+                  Icon(
+                    Icons.wb_sunny,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                ]),
+              ],
+            ),
+          ),
+        ),
+        Card(
+          color: Color.fromARGB(115, 226, 151, 151),
+          child: ListTile(
+            title: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  weekDays[6],
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Text(
+                    "15 °F",
+                    style: TextStyle(color: Colors.white, fontSize: 25),
+                  ),
+                  SizedBox(
+                    width: 7,
+                  ),
+                  Icon(
+                    Icons.wb_sunny,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                ]),
+              ],
+            ),
+          ),
+        ),
+      ],
+    ),
   );
 }
